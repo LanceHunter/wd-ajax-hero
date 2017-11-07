@@ -85,7 +85,7 @@
         }
 
         for (let k = 0; k < movies.length; k++) {
-          let $xhr2 = $.getJSON(`https://omdb-api.now.sh/?t=${movies[k].title}`);
+          let $xhr2 = $.getJSON(`https://omdb-api.now.sh/?i=${movies[k].id}`);
           $xhr2.done(function(data2) {
             if ($xhr2.status !== 200) {
               return;
