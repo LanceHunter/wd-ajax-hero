@@ -68,7 +68,6 @@
       while (movies.length > 0) {
         movies.pop();
       }
-      console.log(input.val());
       let $xhr = $.getJSON(`https://omdb-api.now.sh/?s=${input.val()}`);
 
       $xhr.done(function(data) {
@@ -83,7 +82,6 @@
           movieObj.year = data.Search[i].Year;
           movies.push(movieObj);
         }
-
         for (let k = 0; k < movies.length; k++) {
           let $xhr2 = $.getJSON(`https://omdb-api.now.sh/?i=${movies[k].id}`);
           $xhr2.done(function(data2) {
